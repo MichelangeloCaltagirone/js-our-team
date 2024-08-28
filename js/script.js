@@ -34,7 +34,18 @@ Scott Estrada |	Developer            |	scott-estrada-developer.jpg
 Barbara Ramos |	Graphic Designer     |	barbara-ramos-graphic-designer.jpg
 */
 
-const team = [
+
+
+
+
+// Fase Prep
+
+// recupero elementi dal DOM
+const team = document.getElementById('team');
+
+// Variabili note
+//Array contenente oggetti, ed ognuno di essi rappresenta una persona con 3 info pricipali: nome, ruolo, e immagine di presentazione
+const teamMembers = [
     {name:'Wayne Barnett', role:'Founder & CEO', picPath:'wayne-barnett-founder-ceo'},
     {name:'Angela Caroll', role:'Chief Editor', picPath:'angela-caroll-chief-editor'},
     {name:'Walter Gordon', role:'Office Manager', picPath:'walter-gordon-office-manager'},
@@ -43,10 +54,25 @@ const team = [
     {name:'Barbara Ramos', role:'Graphic Designer', picPath:'barbara-ramos-graphic-designer'},     
 ]
 
-for (let i = 0; i < team.length; i++) {
-    person = team[i];
-    console.log(person.name);
-    console.log('il suo ruolo in azienda è: ',person.role);
-    console.log('il percorso per la sua foto profilo è: ', person.picPath)
-    console.log('---------------------------------------------------------');
+// Dichiaro la variabile che userò per costruire l'output
+let teamText = '';
+
+// Produzione Output
+for (let i = 0; i < teamMembers.length; i++) {
+    person = teamMembers[i];
+
+    //recupero tutte informazioni di una persona
+    let name = person.name;
+    let role = person.role;
+    let picPath = person.picPath;
+
+    // Monto la stringa per ogni persona
+    teamText += `${name}    
+                In azieda ricopre il ruolo di ---> ${role}
+                La foto di presentazione si trova all'indirizzo: ${picPath}
+                      
+                `;
 }
+
+// Mostro in pagina la stringa creata
+team.innerText = teamText;
