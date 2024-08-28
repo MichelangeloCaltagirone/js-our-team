@@ -35,6 +35,18 @@ Barbara Ramos |	Graphic Designer     |	barbara-ramos-graphic-designer.jpg
 */
 
 const team = [
-    {name:'', role:'', picPath:''},
-     
+    {name:'Wayne Barnett', role:'Founder & CEO', picPath:'wayne-barnett-founder-ceo'},
+    {name:'Angela Caroll', role:'Chief Editor', picPath:'angela-caroll-chief-editor'},
+    {name:'Walter Gordon', role:'Office Manager', picPath:'walter-gordon-office-manager'},
+    {name:'Angela Lopez', role:'Social Media Manager', picPath:'angela-lopez-social-media-manager'},
+    {name:'Scott Estrada', role:'Developer', picPath:'scott-estrada-developer'},
+    {name:'Barbara Ramos', role:'Graphic Designer', picPath:'barbara-ramos-graphic-designer'},     
 ]
+
+for (let i = 0; i < team.length; i++) {
+    person = team[i];
+    console.log(person.name);
+    console.log('il suo ruolo in azienda è: ',person.role);
+    console.log('il percorso per la sua foto profilo è: ', person.picPath)
+    console.log('---------------------------------------------------------');
+}
