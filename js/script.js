@@ -1,41 +1,3 @@
-/*
-esercizio di oggi: Our Team
-nome repo: js-our-team
-Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team.
-Ogni membro è caratterizzato dalle seguenti informazioni: nome, ruolo e foto.
-
-MILESTONE 0:
-Creare l’array di oggetti con le informazioni fornite.
-
-MILESTONE 1:
-Stampare su console le informazioni di nome, ruolo e la stringa della foto
-
-MILESTONE 2:
-Stampare le stesse informazioni su DOM sottoforma di stringhe
-
-BONUS 1:
-Trasformare la stringa foto in una immagine effettiva
-
-BONUS 2:
-Organizzare i singoli membri in card/schede (allego qualche immagine per darvi ispirazione
-
-Consigli del giorno:
-Ragioniamo come sempre a step.
-Prima la logica in italiano e poi traduciamo in codice.
-E ricordiamoci che console.log() è nostro amico!
-Buon lavoro!
-
- # DATI
-Wayne Barnett |	Founder & CEO        |	wayne-barnett-founder-ceo.jpg
-Angela Caroll |	Chief Editor         |	angela-caroll-chief-editor.jpg
-Walter Gordon |	Office Manager       |	walter-gordon-office-manager.jpg
-Angela Lopez  |	Social Media Manager |	angela-lopez-social-media-manager.jpg
-Scott Estrada |	Developer            |	scott-estrada-developer.jpg
-Barbara Ramos |	Graphic Designer     |	barbara-ramos-graphic-designer.jpg
-*/
-
-
-
 
 
 // Fase Prep
@@ -67,12 +29,26 @@ for (let i = 0; i < teamMembers.length; i++) {
     let picPath = person.picPath;
 
     // Monto la stringa per ogni persona con il Bonus 1(riga 73: creazione dell'immagine)
+    /*
     teamText += `${name}<br>    
                 In azieda ricopre il ruolo di ---> ${role}<br>
                 La foto di presentazione si trova all'indirizzo: ${picPath}<br>
                 <img src='img/${picPath}.jpg'><br><br>
                 `;
+    */
+
+    // Uso un template literal con le strutture di Bootstrap
+    teamText +=`<div class='col d-flex justify-content-center'>
+                <div class="card border-0 " style="width: 13rem;">
+                <img src="img/${picPath}.jpg" class="card-img-top" alt="${picPath}">
+                <div class="card-body text-center">
+                <h5 class="card-title fst-italic">${name}</h5>
+                <p class="card-text fs-6"><span class='fw-bold text-primary fs-6'>${role}</span></p>
+                </div>
+                </div>
+                </div>`
 }
 
-// Mostro in pagina la stringa creata
+// Mostro il template creato
 team.innerHTML = teamText;
+
