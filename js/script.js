@@ -66,13 +66,13 @@ for (let i = 0; i < teamMembers.length; i++) {
     let role = person.role;
     let picPath = person.picPath;
 
-    // Monto la stringa per ogni persona
-    teamText += `${name}    
-                In azieda ricopre il ruolo di ---> ${role}
-                La foto di presentazione si trova all'indirizzo: ${picPath}
-                      
+    // Monto la stringa per ogni persona con il Bonus 1(riga 73: creazione dell'immagine)
+    teamText += `${name}<br>    
+                In azieda ricopre il ruolo di ---> ${role}<br>
+                La foto di presentazione si trova all'indirizzo: ${picPath}<br>
+                <img src='img/${picPath}.jpg'><br><br>
                 `;
 }
 
 // Mostro in pagina la stringa creata
-team.innerText = teamText;
+team.innerHTML = teamText;
